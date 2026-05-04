@@ -1,1 +1,0 @@
-# my-frist-ai-app
