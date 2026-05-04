@@ -1,0 +1,16 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+
+# 忽略虚拟环境文件夹
+venv/
+env/
+.venv/
+
+# 忽略环境变量密码本
+.env
+
+# 忽略 Python 自动生成的缓存文件（那些 __pycache__ 烦人精）
+__pycache__/
+*.pyc
+
+# 忽略 Cursor/VS Code 的本地配置
+.cursor/

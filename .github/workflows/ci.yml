@@ -1,0 +1,31 @@
+name: CI
+
+# 当代码 push 到 main 分支时触发 CI。
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    # 使用 GitHub 提供的 Ubuntu 虚拟机运行任务。
+    runs-on: ubuntu-latest
+
+    steps:
+      # 拉取仓库代码到 CI 环境中。
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 安装 Python 3.13，和本地开发环境保持一致。
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # 安装 requirements.txt 中声明的依赖。
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # 执行 pytest 测试。
+      - name: Run tests
+        run: pytest
